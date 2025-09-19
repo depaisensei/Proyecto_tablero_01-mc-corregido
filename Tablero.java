@@ -9,8 +9,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-/*Declaracion de variables a utilizar de forma glonal */
-//Ingresar final y quitar del global si no se requiere
+/*Declaracion de variables a utilizar de forma global */
 //reducir los if
 //generar tablero vacio, y luego iniciarlalizar, en el constructo ingresar el num de ser
 public class Tablero {
@@ -176,13 +175,15 @@ int numVecinos;
 //CASO QUE ESTE VIVO   
         if ("o".equals(tableroAnterior[i][j])){
             switch(numSeresVivos){
-            case 2,3->{
+            case 2,3->
+            {
             //si ya se encuentra con vida y tiene 2 o 3 vecinos exactamente
             tableroActual[i][j]="o";
              textoTemporal="\n * Se mantiene vivo en ("+i+", "+j+") por tener 2 o 3 vecinos ";
             textoGenActual= textoGenActual.concat(textoTemporal);
             }
-            default->{ //si ya se encuentra con vida y tiene menos de 2 vecinos o más de 3
+            default->
+            { //si ya se encuentra con vida y tiene menos de 2 vecinos o más de 3
             tableroActual[i][j]="*";
             if(numSeresVivos<2){
              textoTemporal="\n * muere en ("+i+", "+j+") por estar en aislamiento ";
