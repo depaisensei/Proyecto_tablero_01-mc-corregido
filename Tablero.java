@@ -308,22 +308,20 @@ catch (ArrayIndexOutOfBoundsException e){
  * se arroja el resumen del juego.
  */
 public void ejecutarJuego2(){ //cambiar por do while, para no usar breaks
-        for (int g = 0; g <= NUMERODEGENERACIONES-1; g++) {
-      
-               if (validarContinuar()){
-                //En el caso de finalizar prematuramente, mostrar cual fue la razon
-                actualizarGenTablaYTexto();
-            break;  
-        }
-                //necesario para generar nueva generación
+    int g=0;
+    do{
+     //necesario para generar nueva generación
             System.out.println(this.toString()); 
            // System.out.println(eliminarComas(getTextoActual()));      //En el caso de que se requiera mostrar cada generación 
              salto.nextLine();
         calculoNumeroVecinos(); 
         numeroGenActual++; 
+        g++;
 }
+while (g <= NUMERODEGENERACIONES-1 || !validarContinuar());
 //mostrar el resumen al terminar siempre
 System.out.println(eliminarComas(getTextoAcumulado()));
+actualizarGenTablaYTexto();
 
 }
 }
