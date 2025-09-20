@@ -104,9 +104,9 @@ public class Main {
         validar=ValidarEntradaInicio(entrada1);
         } while(!validar);
         //si se pasa la validación, comenzar el juego
-        juego.iniciarlizar(entrada1); //generar primera generación, luego ingresar el string
+       juego.iniciar(entrada1); //generar primera generación, luego ingresar el string
         //inicializar separar los trabajos
-      // System.out.print(juego);
+
        
 
     }

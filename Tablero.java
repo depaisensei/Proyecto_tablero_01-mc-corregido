@@ -295,7 +295,7 @@ catch (ArrayIndexOutOfBoundsException e){
    }
    
    //Función de inicio que acomula las funciones principales
-   public void iniciarlizar(String entrada){
+   public void iniciar(String entrada){
     boolean validar;
     validar=recibirEntradaPosiciones(entrada);
     if(validar){
