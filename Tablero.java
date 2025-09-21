@@ -185,14 +185,14 @@ int numVecinos;
             default->
             { //si ya se encuentra con vida y tiene menos de 2 vecinos o más de 3
             tableroActual[i][j]="*";
-            if(numSeresVivos<2){
-             textoTemporal="\n * muere en ("+i+", "+j+") por estar en aislamiento ";
+             textoTemporal="\n * muere en ("+i+", "+j+") por  ";
+             if(numSeresVivos>3){
+             textoTemporal=textoTemporal.concat("hacinamiento");
+             }
+             else{
+                textoTemporal=textoTemporal.concat("asilamiento");
+             }
             textoGenActual= textoGenActual.concat(textoTemporal);
-            }
-            else {
-            textoTemporal="\n * muere en ("+i+", "+j+") por estar en hacinamiento ";
-            textoGenActual= textoGenActual.concat(textoTemporal);
-            }
             }
         }
         }
@@ -319,7 +319,7 @@ public void ejecutarJuego2(){ //cambiar por do while, para no usar breaks
         numeroGenActual++; 
         g++;
 }
-while (g <= NUMERODEGENERACIONES-1 || !validarContinuar());
+while (g <= NUMERODEGENERACIONES-1 && !validarContinuar());
 //mostrar el resumen al terminar siempre
 System.out.println(eliminarComas(getTextoAcumulado()));
 actualizarGenTablaYTexto();
