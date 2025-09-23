@@ -2,6 +2,22 @@ public class Main {
     public static Tablero juego; //Declarar el objeto de tipo tablero dentro del main, se vuelve un atributo global de la clase main
    public static Dimension dim;
    
+      //validar limites
+   public static boolean validarLimites(Integer f,Integer c,Integer g){
+
+             if (!((f<=20 && f>=2) && (c<=20 && c>=2))){ //validar que filas y columnas esten en el rango de 2 a 20
+             System.err.println("Error en el tamaño de las filas y columnas ingresadas, fuera de rango");
+             return false; 
+            }
+             if (!(g<=50 && g>=1)){ //validar que las generaciones sean minimo 1 y máximo 50
+                 System.err.println("Error en la cantidad de generaciones, fuera de rango"); 
+                 return false;
+                } 
+             else{
+            return true;
+             }
+            }
+
     /*validacion del tamaño de las filas y columnas, además del numero de generaciones */ 
     public static boolean IngresarTamaño(String entrada){
         try{
@@ -10,16 +26,10 @@ public class Main {
              int f=Integer.parseInt(entradaSeparada[0]);
             int  c=Integer.parseInt(entradaSeparada[1]);
             int  g=Integer.parseInt(entradaSeparada[2]);
-         if (!((f<=20 && f>=2) && (c<=20 && c>=2))){ //validar que filas y columnas esten en el rango de 2 a 20
-             System.err.println("Error en el tamaño de las filas y columnas ingresadas, fuera de rango");
-             return false; 
+            if(validarLimites(f,c,g)){
+            dim= new Dimension(f, c, g);
             }
-             if (!(g<=50 && g>=1)){ //validar que las generaciones sean minimo 1 y máximo 50
-                 System.err.println("Error en la cantidad de generaciones, fuera de rango"); 
-                 return false;
-                } 
-                dim= new Dimension(f, c, g);
-                return true;
+            return true;
             }
             catch (NumberFormatException e){
             System.err.println("Error en el tipo de dato ingresado ");
@@ -97,7 +107,7 @@ public class Main {
     //se genera la instancia con los datos validados ingresados anteriormente
      juego= new Tablero(dim.getFilas(),dim.getColumnas(),dim.getGeneraciones());
          boolean validar;
-         //inicio del juego preguntando datos iniciales
+         //inicio del juego preguntando datos inicialess
         do { 
         System.out.println("Dame el numero de seres vivos a crear (impar), además de sus cordenadas x y separandolas por ','");
         entrada1=Keyboard.readString().trim();

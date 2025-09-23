@@ -285,6 +285,9 @@ catch (ArrayIndexOutOfBoundsException e){
     return false;
 }
    }
+
+   
+
 //contar la cantidad de datos dentro del sting para determinar coordendas y aplicar en validacion
    public int regresarContador(String [] entradaSeparada){
     int contador=0;
