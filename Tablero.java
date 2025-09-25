@@ -110,6 +110,7 @@ private void generarTableroVacio(){ //privado, llamar desde el constructor
        contadorTamaño=(FILAS*COLUMNAS);
        return contadorTamaño;
         }
+
     /*Se calcula la primera generación, donde se compara la posición i (fila) y j (columna) con la posicion k (posx y posy), 
      * en el caso de coincidir, la posicion [i,j] del tablero pasa de ser * a ser 0, asignando seres vivos y validar que los datos
      * ingresados sean reales en el main
@@ -311,12 +312,11 @@ catch (ArrayIndexOutOfBoundsException e){
  * mientras las generaciones no se acaben o la función validarcontinuar no regrese un true. Una vez finaliza
  * se arroja el resumen del juego.
  */
-public void ejecutarJuego2(){ //cambiar por do while, para no usar breaks
+public void ejecutarJuego2(){ 
     int g=0;
     do{
      //necesario para generar nueva generación
             System.out.println(this.toString()); 
-           // System.out.println(eliminarComas(getTextoActual()));      //En el caso de que se requiera mostrar cada generación 
              salto.nextLine();
         calculoNumeroVecinos(); 
         numeroGenActual++; 
@@ -326,6 +326,7 @@ while (g <= NUMERODEGENERACIONES-1 && !validarContinuar());
 //mostrar el resumen al terminar siempre
 System.out.println(eliminarComas(getTextoAcumulado()));
 actualizarGenTablaYTexto();
+
 
 }
 }

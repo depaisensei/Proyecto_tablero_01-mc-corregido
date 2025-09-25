@@ -123,4 +123,29 @@ public class Main {
     
 }
 
+/*los ciclos infinitos son una mala práctica, utilizar mayormente do-while cuando se quiera ejecutar más de una vez (utilizar solamente if 
+ * cuando se vaya a ejecutar una sola vez la verificación)
+) */
+
+/*se podria crear una clase especifica para las excepciones, utilizando try catch en cada validación, se pueden definir las excepciones en 
+ * otra clase, y de esa forma captura exactamente el error
+ * 
+ * 
+ * -----------
+ * | Main
+ * |atributos
+ * |
+ * |
+ * |----------------
+ * |validarEntradaInicio
+ * |IngresarTamaño
+ * |Validar limites 
+ * |main
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
 
